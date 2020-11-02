@@ -1,0 +1,24 @@
+    Var 
+    i,words,vow:integer;
+    S:String; 
+     
+    Begin 
+       S:='Hello World.'; 
+       Writeln(Length(S)); 
+
+       words := 0;
+       for i := 1 to Length(S) do
+       Begin
+       if S[i] = ' ' then words:= words + 1;
+       WriteLn('There is ', words, ' words in the sentence');
+       End; 
+
+       vow:= 0;  
+       for i:= 1 to length(S) do
+       Begin
+       if S[i] in['a','e','i','y','o','u','A','E','I','Y','O','U']then vow:= vow + 1;
+       writeln('The number of vowels is: ',vow);
+       End;
+
+    End.
+
