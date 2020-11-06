@@ -1,0 +1,106 @@
+ALGORITHM problem_1_solution_1
+VAR
+   tab1 : ARRAY_OF type[5];
+   tab2 : ARRAY_OF type[5];
+   i,j,sum : INTEGER := 0
+BEGIN
+    WHILE (i < tab1.length-1) DO
+        IF (tab1[i] = tab2[j] ) THEN
+            sum := 0
+            i := i + 1
+        ELSE
+            sum := sum + tab[i]
+        END_IF
+    END_WHILE
+    WHILE (j < tab2.length-1) DO
+        IF (tab1[j] = tab2[i] ) THEN
+            sum :=0
+            j := j + 1
+        ELSE
+            sum := sum + tab[j]
+        END_IF
+    END_WHILE
+    write("the sum is : ", sum)
+END
+
+__________________________________________________________________________________________
+
+ALGORITHM problem_1_solution_2
+VAR
+     htab : HASH_TABLE<INTEGER,INTEGER>
+      i,count,sum : INTEGER
+      tab1 : ARRAY_OF type[5];
+   tab2 : ARRAY_OF type[5];
+   tab3 := ARRAY_OF type[10]
+BEGIN
+    tab3 ::= tab1 + tab2
+    FOR i FROM 0 TO tab3.length-1 STEP 1  DO
+       IF (htab.lookup(tab3[i]) = TRUE) THEN
+           count := htab.get(tab3[i]);
+           htab.insert(tab3[i],count+1);
+       ELSE
+           htab.insert(tab3[i],1);
+       END_IF
+   END_FOR
+
+   FOR i FROM 0 TO tab3.length-1 STEP 1  DO
+       IF (htab.get(tab3[i]) = 1) THEN
+           sum := sum + tab3[i];
+           BREAK;
+       END_IF
+   END_FOR
+   write("the sum is : ", sum)
+END
+
+___________________________________________________________________________________________
+
+
+ALGORITHM problem_2_solution_1
+VAR
+   tab1 : ARRAY_OF type[5];
+   tab2 : ARRAY_OF type[5];
+   i,j,sum : INTEGER := 0
+BEGIN
+    WHILE (i < tab1.length-1) DO
+        IF (tab1[i] = tab2[j] ) THEN
+            sum := sum + tab1[i] + tab2[j]
+            i := i + 1
+        END_IF
+    END_WHILE
+    WHILE (j < tab2.length-1) DO
+        IF (tab1[j] = tab2[i] ) THEN
+            sum := sum + tab1[j] + tab2[i]
+            j := j + 1
+        END_IF
+    END_WHILE
+    write("Sum of overlapping elements: ", sum)
+END
+
+____________________________________________________________________________________________
+
+ALGORITHM problem_2_solution_2
+VAR
+     htab : HASH_TABLE<INTEGER,INTEGER>
+      i,count,sum : INTEGER
+      tab1 : ARRAY_OF type[5];
+   tab2 : ARRAY_OF type[5];
+   tab3 := ARRAY_OF type[10]
+BEGIN
+    tab3 ::= tab1 + tab2
+    FOR i FROM 0 TO tab3.length-1 STEP 1  DO
+       IF (htab.lookup(tab3[i]) = TRUE) THEN
+           count := htab.get(tab3[i]);
+           htab.insert(tab3[i],count+1);
+       ELSE
+           htab.insert(tab3[i],1);
+       END_IF
+   END_FOR
+
+   FOR i FROM 0 TO tab3.length-1 STEP 1  DO
+       IF (htab.get(tab3[i]) > 1) THEN
+           sum := sum + tab3[i];
+           BREAK;
+       END_IF
+   END_FOR
+   write("Sum of overlapping elements: ", sum)
+END

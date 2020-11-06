@@ -16,7 +16,7 @@
 
        vow:= 0;  
        FOR i from 0 to s.length-1 DO
-       IF (S[i] = 'a'OR S[i] ='e'OR S[i] ='i'|| S[i] ='y'|| S[i] ='o'|| S[i] ='u'|| S[i] ='A'|| S[i] ='E'|| S[i] ='I'|| S[i] ='Y'|| S[i] ='O'|| S[i] ='U') then 
+       IF (S[i] = 'a'OR S[i] ='e'OR S[i] ='i'OR S[i] ='y'OR S[i] ='o'OR S[i] ='u'OR S[i] ='A'OR S[i] ='E'OR S[i] ='I'OR S[i] ='Y'OR S[i] ='O'OR S[i] ='U') then 
        vow:= vow + 1;
        write('The number of vowels is: ',vow);
        END;
